@@ -45,106 +45,88 @@ table td a{
     margin: 0 8px;
     cursor: pointer;
 }
-    .contain-footer div:hover
+    .contain-footer div:hover, 
+    .contain-footer div:hover::after, 
+    .contain-footer div:hover::before
     {
         color: white;
         background-color: #5BC0DE;
     }
-    .contain-footer div:hover::after
-    {
-        border-color: #5BC0DE transparent transparent #5BC0DE;
-    }
-    .contain-footer div:hover::before
-    {
-        border-color: transparent #5BC0DE #5BC0DE transparent;
-    }
 
-    #disable
-    {
-        color: #CCC;
-    }
-    #disable:hover
+    #disable, 
+    #disable:hover, 
+    #disable:hover::after, 
+    #disable:hover::before
     {
         color: #CCC;
         background-color: #EEE;
     }
-    #disable:hover::after
-    {
-        border-color: #EEE transparent transparent #EEE;
-    }
-    #disable:hover::before
-    {
-        border-color: transparent #EEE #EEE transparent;
-    }
-    #page
+
+    #page, 
+    #page::after, 
+    #page::before 
     {
         color: white;
         background-color: #52B2CB;
     }
-    #page::after
-    {
-        border-color: #52B2CB transparent transparent #52B2CB;
-    }
-    #page::before
-    {
-        border-color: transparent #52B2CB #52B2CB transparent;
-    }
 
 .contain-footer .angle {
+    z-index: 1;
     width: 60px;
     background-color: #EEE;
 }
 .contain-footer .number {
+    z-index: 1;
     width: 30px;
     background-color: #EEE;
 }
     .contain-footer .number::after {
+        z-index: -1;
         content: "";
         display: block;
         position: absolute;
         top: 0;
-        right: -16px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 15px 8px;
-        border-color: #EEE transparent transparent #EEE;
+        right: -9px;
+        width: 18px;
+        height: 30px;
+        transform: skew(-30deg);
+        background-color: #EEE;
     }
     .contain-footer .number::before {
+        z-index: -1;
         content: "";
         display: block;
         position: absolute;
         top: 0;
-        left: -16px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 15px 8px;
-        border-color: transparent #EEE #EEE transparent;
+        left: -9px;
+        width: 18px;
+        height: 30px;
+        transform: skew(-30deg);
+        background-color: #EEE;
     }
     .contain-footer .prev::after {
+        z-index: -1;
         content: "";
         display: block;
         position: absolute;
         top: 0;
-        right: -16px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 15px 8px;
-        border-color: #EEE transparent transparent #EEE;
+        right: -9px;
+        width: 18px;
+        height: 30px;
+        transform: skew(-30deg);
+        background-color: #EEE;
     }
     .contain-footer .next::before {
+        z-index: -1;
         content: "";
         display: block;
         position: absolute;
         top: 0;
-        left: -16px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 15px 8px;
-        border-color: transparent #EEE #EEE transparent;
+        left: -9px;
+        width: 18px;
+        height: 30px;
+        transform: skew(-30deg);
+        background-color: #EEE;
     }
 
 
