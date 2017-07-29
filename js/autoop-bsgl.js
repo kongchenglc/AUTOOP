@@ -158,9 +158,11 @@ function sendAjaxData() {
 
     var xhr = new XMLHttpRequest();
     var mastersDataJson = JSON.stringify(mastersData);
-    if(xhr.readyState == 4 && xhr.status == 200) {
-        var  returnResult = JSON.parse(xhr.responseText);
-        success(returnResult);
+    xhr.onreadystatechange = function() {
+	    if(xhr.readyState == 4 && xhr.status == 200) {
+	        var  returnResult = JSON.parse(xhr.responseText);
+	        success(returnResult);
+	    }
     }
     xhr.open("post","");
     xhr.send(mastersDataJson);
