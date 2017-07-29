@@ -61,10 +61,14 @@
     background-color: #5BC0DE;
 }
 
-.part-softwares, 
-.part-result {
+.part-softwares {
     margin-top: 80px;
     height: 100px;
+}
+
+.part-result {
+    margin-top: 80px;
+    height: 200px;    
 }
 
 #myModal .modal-body {
@@ -74,9 +78,10 @@
 
 
 /* 元素 */
-[id^="master_"]
+[id^="master_"], 
+.result-masters
 {
-    float: left; 
+    float: left;  
     margin: 5px;
     border: 2px solid #3290D0;
     border-radius: 2px;
@@ -84,7 +89,12 @@
     background-color:#479BD5;
 }
 
-[id^="softwares_"]
+.result-masters {
+    width: 95%;
+}
+
+[id^="softwares_"], 
+.result-softwares
 {
     float: left; 
     margin: 5px;
@@ -95,17 +105,21 @@
 }
 
 [id^="master_"] div,
-[id^="softwares_"] div {
+[id^="softwares_"] div, 
+.result-masters div, 
+.result-softwares div {
     float: left;
     margin: 2px;
 }
 
-[id^="master_"] a {
+[id^="master_"] a,
+.result-masters a {
     width: 18px;
     cursor: pointer;    
 } 
 
-[id^="softwares_"] a {
+[id^="softwares_"] a, 
+.result-softwares a {
     width: 18px;
     cursor: pointer;
     color: #1F746F;
@@ -113,3 +127,24 @@
     [id^="softwares_"] a:hover {
         color: #0F5552;
     }
+
+.result-softwares-error {
+    float: left; 
+    margin: 5px;
+    border: 2px solid #CB5252;
+    border-radius: 2px;
+    color: white;
+    background-color:#E66F6F;
+}
+
+.result-softwares-error div {
+    float: left;
+    margin: 2px;
+}
+
+.result-softwares-error a {
+    width: 18px;
+    cursor: pointer;
+    color: #B93E3E;
+}
+

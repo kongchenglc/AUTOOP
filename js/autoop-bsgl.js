@@ -151,11 +151,32 @@ function addMasters() {
 
 
 function sendAjaxData() {
+    var testData = {'minion-2': {'Redis': 'success', 'JDK': 'success', 'Zabbix': 'success'}, 
+                    'minion-1': {'Redis': 'success', 'JDK': 'success', 'Zabbix': 'fail'}
+                    }
+    success(testData);
+
     var xhr = new XMLHttpRequest();
     var mastersDataJson = JSON.stringify(mastersData);
     if(xhr.readyState == 4 && xhr.status == 200) {
-        console.log("send success printf result", "{'minion-2': {'Redis': 'success', 'JDK': 'success', 'Zabbix': 'success'}, 'minion-1': {'Redis': 'success', 'JDK': 'success', 'Zabbix': 'fail'}");
+        var  returnResult = JSON.parse(xhr.responseText);
+        success(returnResult);
     }
-    xhr.open();
+    xhr.open("post","");
     xhr.send(mastersDataJson);
+    
+    function success(data) {
+        var resultDom = document.getElementsByClassName("return-result")[0];
+        resultDom.innerHTML = "";
+        for (var master in data) {
+            resultDom.innerHTML += '<div class="result-masters"><div>&nbsp;' + master + '&nbsp;</div></div>';
+            for (var software in data[master]) {
+                if(data[master][software] == "success") {
+                    resultDom.innerHTML += '<div class="result-softwares"><div>&nbsp;' + software + '&nbsp;</div><div><a class="fa fa-check-circle"></a></div></div>';
+                } else {
+                    resultDom.innerHTML += '<div class="result-softwares-error"><div>&nbsp;' + software + '&nbsp;</div><div><a class="fa fa-exclamation-circle"></a></div></div>';
+                }
+            }
+        }
+    }
 }
