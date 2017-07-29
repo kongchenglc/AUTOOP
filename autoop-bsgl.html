@@ -1,287 +1,294 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>AUTOOP</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <!-- Demo css -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/font-awesome.min.css">
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="./css/swiper-3.4.2.min.css">
-    <!-- styles -->
-    <link rel="stylesheet" href="./css/swiper-menu.css">
-    <link rel="stylesheet" href="./css/autoop-index.css"> 
 
-    <!-- 动态加载 -->
-    <link rel="stylesheet" href="css/autoop-bsgl.css">
+<head>
+  <meta charset="utf-8">
+  <title>AUTOOP</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <!-- Demo css -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/font-awesome.min.css">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="./css/swiper-3.4.2.min.css">
+  <!-- styles -->
+  <link rel="stylesheet" href="./css/swiper-menu.css">
+  <link rel="stylesheet" href="./css/autoop-index.css">
+
+  <!-- 动态加载 -->
+  <link rel="stylesheet" href="css/autoop-bsgl.css">
 
 </head>
+
 <body>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">选择主机</h4>
-            </div>
-            <div class="modal-body">
-                
-                <!-- <div id="master_select_lc">
-                    <div>&nbsp;lc&nbsp;</div>
-                    <div><a class="fa fa-square-o" onclick="selectMaster(this)"></a></div>
-                </div>
-
-                 <div id="master_select_lc">
-                    <div>&nbsp;lc&nbsp;</div>
-                    <div><a class="fa fa-check-square-o" onclick="disSelectMaster(this)"></a></div>
-                </div>  -->
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn" data-dismiss="modal" style="color:white; background-color:#52B2CB" onclick="loadThePage()">确认</button>
-            </div>
-            </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">选择主机</h4>
         </div>
-    </div>
+        <div class="modal-body">
 
-    <!-- Swiper -->
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
+          <!-- <div id="master_select_lc">
+              <div>&nbsp;lc&nbsp;</div>
+              <div><a class="fa fa-square-o" onclick="selectMaster(this)"></a></div>
+          </div>
 
+            <div id="master_select_lc">
+              <div>&nbsp;lc&nbsp;</div>
+              <div><a class="fa fa-check-square-o" onclick="disSelectMaster(this)"></a></div>
+          </div>  -->
 
-            <div class="swiper-slide menu">
-
-                <div class="index-menu col-sm-9 col-xs-11">
-                    <div class="index-menu-home">
-                        <a href="./autoop-index.html"><h1>AUTOOP</h1></a>
-                    </div>
-                    <ul class="index-menu-nav">
-                        <li>
-                            <a href="./autoop-index.html">
-                                <span class="first fa fa-laptop"></span>
-                                <span class="text">主控页面</span>
-                                <span class="card">
-                                    <i class="front fa fa-angle-left"></i>
-                                    <i class="back"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span class="first fa fa-bar-chart"></span>
-                                <span class="text">装机列表</span>
-                                <span class="card">
-                                    <i class="front fa fa-angle-left"></i>
-                                    <i class="back"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./autoop-zcgl-zjxx.html">
-                                <span class="first fa fa-cny"></span>
-                                <span class="text">资产管理</span>
-                                <span class="card">
-                                    <i class="front fa fa-angle-left"></i>
-                                    <i class="back"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li id="active">
-                            <a>
-                                <span class="first fa fa-sitemap"></span>
-                                <span class="text">部署管理</span>
-                                <span class="card">
-                                    <i class="front fa fa-angle-left"></i>
-                                    <i class="back"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span class="first fa fa-dashboard"></span>
-                                <span class="text">监控中心</span>
-                                <span class="card">
-                                    <i class="front fa fa-angle-left"></i>
-                                    <i class="back"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span class="first fa fa-book"></span>
-                                <span class="text">日志分析</span>
-                                <span class="card">
-                                    <i class="front fa fa-angle-left"></i>
-                                    <i class="back"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span class="first fa fa-book"></span>
-                                <span class="text">运维审计</span>
-                                <span class="card">
-                                    <i class="front fa fa-angle-left"></i>
-                                    <i class="back"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-
-            <div class="swiper-slide content">
-                <div class="index-main col-sm-12 col-xs-12">
-                    <div class="index-main-top">
-                        <div class="menu-button">
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                        </div>
-                        <h2 class="index-main-top-nav">AUTOOP&emsp;<i class="fa fa-angle-right"></i>&emsp;<span>部署管理</span>&emsp;<i class="fa fa-angle-right"></i>&emsp;<span>部署软件</span></h2>
-                        <div class="index-main-top-signout">
-                            <a href="./autoop-signin.html"><span class="fa">&#xf007;&emsp;</span>注销</a>
-                        </div>
-                    </div>
-                    <div class="index-main-contain">
-
-                        <!-- contain -->
-                        <div class="main-contain-bsgl">
-
-                            <!-- header -->
-                            <div class="contain-header">
-                                <h3><b>部署管理</b></h3>
-                                <ol class="breadcrumb">
-                                  <li class="active">部署软件</li><li><a onclick="activeTo1(this)">部署文件</a></li>
-                             <!-- <li><a onclick="activeTo2(this)">部署软件</a></li><li class="active">部署文件</li> -->
-                                </ol>
-                            </div>
-
-                            <div class="contain-middle">
-                                <!-- 目标主机 -->
-                                <div class="part-masters">
-                                    <div class="col-md-2"><b>目标主机:</b></div>
-                                    <div class="select-masters col-md-10">
-
-                                         <!-- <div id="master_1">
-                                            <div>&nbsp;master1&nbsp;</div>
-                                            <div><a class="fa fa-close"  onclick="deleteMaster(this)"></a></div>
-                                        </div>  -->
-
-                                    </div>
-                                    <div class="add-masters" onclick="addMasters()" data-toggle="modal" data-target="#myModal">
-                                        添加   
-                                    </div>   
-                                </div>
-                                
-                                <!-- 动态加载部署软件/部署文件 -->
-                                <!-- 部署软件 -->
-                                <div class="part-softwares">
-                                     <div class="col-md-2"><b>选择软件:</b></div>
-                                    <div class="install-softwares col-md-10">
-
-                                        <div id="softwares_Zabbix">
-                                            <div>&nbsp;Zabbix&nbsp;</div>
-                                            <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
-                                        </div>
-                                        <div id="softwares_JDK">
-                                            <div>&nbsp;JDK&nbsp;</div>
-                                            <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
-                                        </div>
-                                        <div id="softwares_Tomcat">
-                                            <div>&nbsp;Tomcat&nbsp;</div>
-                                            <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
-                                        </div>
-                                        <div id="softwares_MySQL">
-                                            <div>&nbsp;MySQL&nbsp;</div>
-                                            <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
-                                        </div>
-                                        <div id="softwares_Nginx">
-                                            <div>&nbsp;Nginx&nbsp;</div>
-                                            <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
-                                        </div>
-                                        <div id="softwares_Apache">
-                                            <div>&nbsp;Apache&nbsp;</div>
-                                            <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
-                                        </div>
-                                        <div id="softwares_PHP">
-                                            <div>&nbsp;PHP&nbsp;</div>
-                                            <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
-                                        </div>
-                                        <div id="softwares_Redis">
-                                            <div>&nbsp;Redis&nbsp;</div>
-                                            <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
-                                        </div>
-
-                                    </div>
-                                    <div class="submit-softwares" onclick="sendAjaxData()">
-                                        提交   
-                                    </div> 
-                                </div>
-
-                                <!-- 部署文件 -->
-                                <div class="part-files">
-                                </div>
-
-
-
-                                <!-- ./动态加载部署软件/部署文件 -->
-
-                                <div class="part-result">
-                                    <div class="col-md-2"><b>返回结果:</b></div>
-                                    <div class="return-result col-md-10"></div>
-                                </div>
-                            </div>
-                            
-
-                        </div>
-                        <!-- /contain -->
-
-                    </div>
-                </div>
-            </div>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn" data-dismiss="modal" style="color:white; background-color:#52B2CB" onclick="loadThePage()">确认</button>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Swiper JS -->
-    <script src="./js/swiper-3.4.2.min.js"></script>
-    <!-- js -->
-    <script src="./js/jquery-2.2.3.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="js/autoop-bsgl.js"></script>
-    <!-- Initialize Swiper -->
-    <script>
-        var toggleMenu = function(){
-            if (swiper.previousIndex == 0)
-                swiper.slidePrev()
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+
+
+      <div class="swiper-slide menu">
+
+        <div class="index-menu col-sm-9 col-xs-11">
+          <div class="index-menu-home">
+            <a href="./autoop-index.html">
+              <h1>AUTOOP</h1>
+            </a>
+          </div>
+          <ul class="index-menu-nav">
+            <li>
+              <a href="./autoop-index.html">
+                  <span class="first fa fa-laptop"></span>
+                  <span class="text">主控页面</span>
+                  <span class="card">
+                      <i class="front fa fa-angle-left"></i>
+                      <i class="back"></i>
+                  </span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                  <span class="first fa fa-bar-chart"></span>
+                  <span class="text">装机列表</span>
+                  <span class="card">
+                      <i class="front fa fa-angle-left"></i>
+                      <i class="back"></i>
+                  </span>
+              </a>
+            </li>
+            <li>
+              <a href="./autoop-zcgl-zjxx.html">
+                  <span class="first fa fa-cny"></span>
+                  <span class="text">资产管理</span>
+                  <span class="card">
+                      <i class="front fa fa-angle-left"></i>
+                      <i class="back"></i>
+                  </span>
+              </a>
+            </li>
+            <li id="active">
+              <a>
+                  <span class="first fa fa-sitemap"></span>
+                  <span class="text">部署管理</span>
+                  <span class="card">
+                      <i class="front fa fa-angle-left"></i>
+                      <i class="back"></i>
+                  </span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                  <span class="first fa fa-dashboard"></span>
+                  <span class="text">监控中心</span>
+                  <span class="card">
+                      <i class="front fa fa-angle-left"></i>
+                      <i class="back"></i>
+                  </span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                  <span class="first fa fa-book"></span>
+                  <span class="text">日志分析</span>
+                  <span class="card">
+                      <i class="front fa fa-angle-left"></i>
+                      <i class="back"></i>
+                  </span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                  <span class="first fa fa-book"></span>
+                  <span class="text">运维审计</span>
+                  <span class="card">
+                      <i class="front fa fa-angle-left"></i>
+                      <i class="back"></i>
+                  </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+
+      <div class="swiper-slide content">
+        <div class="index-main col-sm-12 col-xs-12">
+          <div class="index-main-top">
+            <div class="menu-button">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+            <h2 class="index-main-top-nav">AUTOOP&emsp;<i class="fa fa-angle-right"></i>&emsp;<span>部署管理</span>&emsp;<i class="fa fa-angle-right"></i>&emsp;<span>部署软件</span></h2>
+            <div class="index-main-top-signout">
+              <a href="./autoop-signin.html"><span class="fa">&#xf007;&emsp;</span>注销</a>
+            </div>
+          </div>
+          <div class="index-main-contain">
+
+            <!-- contain -->
+            <div class="main-contain-bsgl">
+
+              <!-- header -->
+              <div class="contain-header">
+                <h3><b>部署管理</b></h3>
+                <ol class="breadcrumb">
+                  <li class="active">部署软件</li>
+                  <li><a onclick="activeTo1(this)">部署文件</a></li>
+                  <!-- <li><a onclick="activeTo2(this)">部署软件</a></li><li class="active">部署文件</li> -->
+                </ol>
+              </div>
+
+              <div class="contain-middle">
+                <!-- 目标主机 -->
+                <div class="part-masters">
+                  <div class="col-md-2"><b>目标主机:</b></div>
+                  <div class="select-masters col-md-10">
+
+                    <!-- <div id="master_1">
+                        <div>&nbsp;master1&nbsp;</div>
+                        <div><a class="fa fa-close"  onclick="deleteMaster(this)"></a></div>
+                    </div>  -->
+
+                  </div>
+                  <div class="add-masters" onclick="addMasters()" data-toggle="modal" data-target="#myModal">
+                    添加
+                  </div>
+                </div>
+
+                <!-- 动态加载部署软件/部署文件 -->
+                <!-- 部署软件 -->
+                <div class="part-softwares">
+                  <div class="col-md-2"><b>选择软件:</b></div>
+                  <div class="install-softwares col-md-10">
+
+                    <div id="softwares_Zabbix">
+                      <div>&nbsp;Zabbix&nbsp;</div>
+                      <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
+                    </div>
+                    <div id="softwares_JDK">
+                      <div>&nbsp;JDK&nbsp;</div>
+                      <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
+                    </div>
+                    <div id="softwares_Tomcat">
+                      <div>&nbsp;Tomcat&nbsp;</div>
+                      <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
+                    </div>
+                    <div id="softwares_MySQL">
+                      <div>&nbsp;MySQL&nbsp;</div>
+                      <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
+                    </div>
+                    <div id="softwares_Nginx">
+                      <div>&nbsp;Nginx&nbsp;</div>
+                      <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
+                    </div>
+                    <div id="softwares_Apache">
+                      <div>&nbsp;Apache&nbsp;</div>
+                      <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
+                    </div>
+                    <div id="softwares_PHP">
+                      <div>&nbsp;PHP&nbsp;</div>
+                      <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
+                    </div>
+                    <div id="softwares_Redis">
+                      <div>&nbsp;Redis&nbsp;</div>
+                      <div><a class="fa fa-square-o" onclick="selectSoftwares(this)"></a></div>
+                    </div>
+
+                  </div>
+                  <div class="submit-softwares" onclick="sendAjaxData()">
+                    提交
+                  </div>
+                </div>
+
+                <!-- 部署文件 -->
+                <div class="part-files">
+                </div>
+
+
+
+                <!-- ./动态加载部署软件/部署文件 -->
+
+                <div class="part-result">
+                  <div class="col-md-2"><b>返回结果:</b></div>
+                  <div class="return-result col-md-10">
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <!-- /contain -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="./js/swiper-3.4.2.min.js"></script>
+  <!-- js -->
+  <script src="./js/jquery-2.2.3.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="js/autoop-bsgl.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var toggleMenu = function () {
+      if (swiper.previousIndex == 0)
+        swiper.slidePrev()
+    }
+      , menuButton = document.getElementsByClassName('menu-button')[0]
+      , swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto'
+        , initialSlide: 1
+        , resistanceRatio: .00000000000001
+        , onSlideChangeStart: function (slider) {
+          if (slider.activeIndex == 0) {
+            menuButton.classList.add('cross')
+            menuButton.removeEventListener('click', toggleMenu, false)
+          } else
+            menuButton.classList.remove('cross')
         }
-        , menuButton = document.getElementsByClassName('menu-button')[0]
-        , swiper = new Swiper('.swiper-container', {
-            slidesPerView: 'auto'
-            , initialSlide: 1
-            , resistanceRatio: .00000000000001
-            , onSlideChangeStart: function(slider) {
-                if (slider.activeIndex == 0) {
-                    menuButton.classList.add('cross')
-                    menuButton.removeEventListener('click', toggleMenu, false)
-                } else
-                    menuButton.classList.remove('cross')
-            }
-            , onSlideChangeEnd: function(slider) {
-                if (slider.activeIndex == 0)
-                    menuButton.removeEventListener('click', toggleMenu, false)
-                else
-                    menuButton.addEventListener('click', toggleMenu, false)
-            }
-            , slideToClickedSlide: true
-        })
-    </script>
+        , onSlideChangeEnd: function (slider) {
+          if (slider.activeIndex == 0)
+            menuButton.removeEventListener('click', toggleMenu, false)
+          else
+            menuButton.addEventListener('click', toggleMenu, false)
+        }
+        , slideToClickedSlide: true
+      })
+  </script>
 </body>
+
 </html>
